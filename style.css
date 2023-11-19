@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+/* Altura > Largura */
+@media (orientation: portrait) {
+  input[type="radio"] {
+    transform: scale(2); 
+    margin-right: 10px;
+  }
+
+  textarea {
+    font-size: 3.5em;
+  }
+
+  #titulo {
+    font-size: 3.5em;
+  }
+  
+  #titulo_formulario, #titulo_lista {
+    font-size: 3.5em;
+  }
+
+  .add_button {
+    font-size: 2em;
+  }
+  
+  .fonte_formulario {
+    font-size: 2em;
+  }
+  
+  #corpo_do_site {
+    height: 145vh;
+    grid-template-areas:
+    "titulo titulo"
+    "inserir inserir"
+    "mostrar mostrar";
+    grid-template-rows: 10vh auto auto;
+  }
+
+  #container_inserir_jogos, #container_lista_de_jogos {
+    margin-bottom: 5vh;
+  }
+  
+  #inserir_jogos, #lista_de_jogos {
+    border: 4px solid var(--vermelho);
+    border-radius: 8px;
+    display: flex;
+    height: 60vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    max-height: 75vh;
+    max-width: 700px;
+    min-width: 300px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 65vw;
+  }
+
+  .titulo_de_jogo {
+    font-size: 3em;
+  }
+
+  .descricao_de_jogo {
+    font-size: 2em;
+  }
+
+  .botao_remover, .favorito, .normal {
+    border: 0;
+    height: 50px;
+    left: 0px;
+    width: 50px;
+  }
+
+  #imagem_foguete {
+    border: 0;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px;
+  }
+}
+
+/* Altura < Largura */
+@media (orientation: landscape) {
+  #corpo_do_site {
+    height: 100vh;
+    grid-template-areas:
+    "titulo titulo"
+    "inserir mostrar";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 17vh 83vh;
+  }
+
+  #inserir_jogos, #lista_de_jogos {
+    border: 4px solid var(--vermelho);
+    border-radius: 8px;
+    display: flex;
+    height: 75vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    max-height: 75vh;
+    max-width: 550px;
+    min-width: 300px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 40vw;
+  }
+
+  .botao_remover, .favorito, .normal {
+    border: 0;
+    height: 25px;
+    left: 0px;
+    width: 25px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+:root {
+  --fonte_formulario: 'Mooli', sans-serif;
+  --fonte_titulo: 'Roboto Slab', sans-serif;
+  --vermelho: red;
+  --preto: black;
+  --branco: white;
+  --cinza: gray;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid var(--preto);
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+#nome_do_jogo {
+  height: 15%;
+}
+
+#descricao_do_jogo {
+  height: 30%;
+}
+
+#botao_salvar {
+  display: flex;
+  justify-content: center;
+}
+
+#corpo_do_site {
+  background-image: url('Imagens/background.jpg');
+  background-size: contain;
+  display: grid;
+  margin: 0;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+#titulo {
+  align-items: center;
+  color: var(--branco);
+  display: flex;
+  font-family: var(--fonte_titulo);
+  grid-area: titulo;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0px 0px 5px var(--preto);
+}
+
+#titulo_formulario, #titulo_lista {
+  text-align: center;
+}
+
+#titulo_lista {
+  color: var(--preto);
+}
+
+#container_inserir_jogos, #container_lista_de_jogos {
+  display: flex;
+  justify-content: center;
+}
+
+#container_inserir_jogos {
+  grid-area: inserir;
+}
+
+#inserir_jogos {
+  background-color: var(--branco);
+  justify-content: center;
+}
+
+#container_lista_de_jogos {
+  grid-area: mostrar;
+}
+
+#lista_de_jogos {
+  background-color: var(--branco);
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+#lista_de_jogos::-webkit-scrollbar {
+  width: 10px; 
+}
+
+#lista_de_jogos::-webkit-scrollbar-thumb {
+  background: var(--preto); 
+}
+
+#lista_de_jogos::-webkit-scrollbar-track {
+  background: var(--cinza); 
+}
+
+#container_imagem_foguete {
+  align-items: center;
+  display: flex;
+  grid-area: imagem;
+  justify-content: center;
+}
+
+#container_conteudo {
+  grid-area: conteudo;
+}
+
+#sem_jogos {
+  color: var(--preto);
+}
+
+.add_button {
+  width: 65%;
+  background-color: var(--preto);
+  color: var(--branco);
+  padding: 14px 20px;
+  margin: 3vh 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add_button:hover {
+  background: #a52a2a;
+  color: var(--cor3);
+}
+
+.botao_favorito {
+  grid-area: botao_favorito;
+}
+
+.botao_remover {
+  background: url('Imagens/lixeira.png');
+  background-size: cover;
+  grid-area: botao_remover;
+} 
+
+.descricao_de_jogo {
+  margin-top: 0;
+}
+
+.display_block {
+  display: block;
+}
+
+.favorito {
+  background: url('Imagens/estrela_inteira.png');
+  background-size: cover;
+}
+
+.fonte_formulario {
+  font-family: var(--fonte_formulario);
+}
+
+.jogo_na_lista {
+  background-color: var(--branco);
+  border: 4px solid var(--preto);
+  border-radius: 8px;
+  display: grid;
+  grid-template-areas: "imagem conteudo botao_remover botao_favorito";
+  grid-template-columns: 1fr 7fr auto auto;
+  margin-bottom: 1vh;
+  min-height: 15vh;
+  width: 100%;
+}
+
+.normal {
+  background: url('Imagens/estrela_vazia.png');
+  background-size: cover;
+}
+
+.titulo_de_jogo {
+  margin-bottom: 0;
+}
